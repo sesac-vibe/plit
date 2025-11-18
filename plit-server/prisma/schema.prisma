@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  name      String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  contents  Content[]
+}
+
+model Content {
+  id             String    @id @default(cuid())
+  userId         String
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  youtubeUrl     String
+  originalTitle  String
+  thumbnailUrl   String?
+  status         String    @default("processing")
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  versions       Version[]
+}
+
+model Version {
+  id          String    @id @default(cuid())
+  contentId   String
+  content     Content   @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  duration    Int
+  audioUrl    String?
+  isPublished Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  chapters    Chapter[]
+}
+
+model Chapter {
+  id        String    @id @default(cuid())
+  versionId String
+  version   Version   @relation(fields: [versionId], references: [id], onDelete: Cascade)
+  title     String
+  startTime Float
+  endTime   Float
+  order     Int
+  segments  Segment[]
+}
+
+model Segment {
+  id        String  @id @default(cuid())
+  chapterId String
+  chapter   Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  text      String
+  startTime Float
+  endTime   Float
+  order     Int
+}
+
+model Visual {
+  id          String  @id @default(cuid())
+  versionId   String
+  imageUrl    String
+  triggerTime Float
+  duration    Float
+  order       Int
+}

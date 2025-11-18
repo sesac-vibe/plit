@@ -33,7 +33,7 @@ async function downloadSubtitles(videoUrl: string, outputName: string): Promise<
   console.log(`Downloading subtitles for: ${videoUrl}`);
 
   try {
-    const { stdout, stderr } = await execAsync(
+    const { stderr } = await execAsync(
       `yt-dlp --skip-download --write-auto-sub --sub-lang en,ko --sub-format vtt --output "${outputPath}" "${videoUrl}"`
     );
 

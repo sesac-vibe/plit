@@ -45,65 +45,67 @@
 
 ---
 
-## Day 2-3: 코어 개발
+## Day 2-3: 코어 개발 ✅
 
 ### 백엔드 개발
 
 #### 프로젝트 초기화
-- [ ] Node.js 20 + TypeScript 프로젝트 생성 (pnpm)
-- [ ] Express 서버 기본 구조
-- [ ] 환경 변수 설정 (.env)
-- [ ] Git 저장소 설정
+- [x] Node.js 20 + TypeScript 프로젝트 생성 (pnpm)
+- [x] Express 서버 기본 구조
+- [x] 환경 변수 설정 (.env)
+- [x] Git 저장소 설정
+- [x] Docker Compose (PostgreSQL + Redis)
 
 #### 데이터베이스 (Prisma + PostgreSQL 16)
-- [ ] PostgreSQL 16 로컬 설치
-- [ ] Prisma 초기화
-- [ ] 데이터 모델 정의:
-  - [ ] User
-  - [ ] Content
-  - [ ] Version (5/15/30분)
-  - [ ] Chapter
-  - [ ] Segment
-  - [ ] Visual
-- [ ] 마이그레이션 실행
+- [x] PostgreSQL 16 로컬 설치 (Docker)
+- [x] Prisma 초기화
+- [x] 데이터 모델 정의:
+  - [x] User
+  - [x] Content
+  - [x] Version (5/15/30분)
+  - [x] Chapter
+  - [x] Segment
+  - [x] Visual
+- [x] 마이그레이션 실행
+- [x] Seed 스크립트 (demo user)
 
 #### AI 음성 처리 파이프라인
-- [ ] OpenAI TTS API 통합
-- [ ] tts-1-hd 모델 설정
-- [ ] 음성 모델 선택 기능
-- [ ] 스크립트 → AI 음성 변환
+- [x] OpenAI TTS API 통합
+- [x] tts-1-hd 모델 설정
+- [x] 음성 모델 선택 기능
+- [x] 스크립트 → AI 음성 변환
 - [ ] 챕터별 음성 분할 저장
-- [ ] 로컬 스토리지 구조 설계
+- [x] 로컬 스토리지 구조 설계
 
 #### 콘텐츠 변환 서비스
-- [ ] YouTube URL 파싱
-- [ ] yt-dlp 통합 (자막 추출)
-- [ ] GPT-4 스크립트 변환
-  - [ ] 5분 버전
-  - [ ] 15분 버전
-  - [ ] 30분 버전
+- [x] YouTube URL 파싱
+- [x] youtube-transcript 통합 (자막 추출)
+- [x] GPT-4 스크립트 변환
+  - [x] 5분 버전
+  - [x] 15분 버전
+  - [x] 30분 버전
 - [ ] FFmpeg 통합 (프레임 추출)
-- [ ] 타임스탬프 메타데이터 생성
+- [x] 타임스탬프 메타데이터 생성
 - [ ] Bull 작업 큐 설정
 
 #### 로컬 스토리지
-- [ ] 디렉토리 구조 설계
-- [ ] 오디오 파일 저장
-- [ ] 이미지 파일 저장
-- [ ] 파일 경로 URL 생성
+- [x] 디렉토리 구조 설계
+- [x] 오디오 파일 저장
+- [x] 이미지 파일 저장
+- [x] 파일 경로 URL 생성
 
 #### REST API
-- [ ] POST /api/content/create
-- [ ] GET /api/content/:id
-- [ ] GET /api/content/:id/versions
-- [ ] GET /api/content/:id/script
-- [ ] PUT /api/content/:id/script
-- [ ] POST /api/content/:id/generate-voice
-- [ ] POST /api/content/:id/publish
-- [ ] GET /api/content/:id/metadata
+- [x] POST /api/content/create
+- [x] GET /api/content/:id
+- [x] GET /api/content/:id/versions
+- [x] GET /api/content/:id/script
+- [x] PUT /api/content/:id/script
+- [x] POST /api/content/:id/generate-voice
+- [x] POST /api/content/:id/publish
+- [x] GET /api/content/:id/metadata
 
 #### Redis 캐싱
-- [ ] Redis 7 로컬 설치
+- [x] Redis 7 로컬 설치 (Docker)
 - [ ] 메타데이터 캐싱
 - [ ] 세션 관리
 
@@ -150,15 +152,15 @@
 - [ ] 로컬 캐싱
 
 #### 챕터 시스템
-- [ ] 챕터 목록 UI
-- [ ] 챕터 이동 버튼
-- [ ] 현재 챕터 하이라이트
-- [ ] 챕터 전환 애니메이션
+- [x] 챕터 목록 UI
+- [x] 챕터 이동 버튼
+- [x] 현재 챕터 하이라이트
+- [x] 챕터 전환 애니메이션
 
 #### 버전 선택 UI
-- [ ] 5분/15분/30분 선택 UI
-- [ ] 버전 전환 로딩
-- [ ] 현재 선택 버전 표시
+- [x] 5분/15분/30분 선택 UI
+- [x] 버전 전환 로딩
+- [x] 현재 선택 버전 표시
 
 #### 반응형 레이아웃
 - [ ] 모바일 (375px ~ 428px)
@@ -166,17 +168,17 @@
 - [ ] 데스크톱 (1280px+)
 
 #### 크리에이터 스튜디오
-- [ ] URL 입력 폼
-- [ ] URL 유효성 검증
-- [ ] 변환 시작 버튼
-- [ ] 로딩 상태 애니메이션
-- [ ] 3가지 버전 탭
-- [ ] 챕터별 스크립트 카드
-- [ ] 인라인 텍스트 편집
-- [ ] AI 음성 미리듣기
+- [x] URL 입력 폼
+- [x] URL 유효성 검증
+- [x] 변환 시작 버튼
+- [x] 로딩 상태 애니메이션 + 폴링
+- [x] 3가지 버전 탭
+- [x] 챕터별 스크립트 카드
+- [x] 인라인 텍스트 편집
+- [x] AI 음성 미리듣기
 - [ ] 미니 플레이어 UI
-- [ ] 게시 버튼
-- [ ] 게시 플로우
+- [x] 게시 버튼
+- [x] 게시 플로우
 
 ---
 
@@ -256,4 +258,4 @@
 
 ---
 
-**Last Updated:** 2025-11-19 (Day 1 Complete)
+**Last Updated:** 2025-11-19 (Day 2-3 Complete ✅)

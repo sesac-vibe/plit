@@ -13,7 +13,7 @@ export const Slide5 = ({ progress }: Slide5Props) => (
 
     <ImageSlot
       show={progress >= 50}
-      src="/images/slide-5.jpg"
+      src="/images/slide-5.gif"
       animation="fade"
       className="h-80"
     />

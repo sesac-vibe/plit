@@ -1,0 +1,25 @@
+{
+  "name": "plit-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test:tts": "tsx src/tests/tts-test.ts",
+    "test:ytdlp": "tsx src/tests/ytdlp-test.ts",
+    "test:gpt": "tsx src/tests/gpt-test.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.16.1",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "openai": "^6.9.1"
+  }
+}

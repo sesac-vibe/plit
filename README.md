@@ -57,7 +57,7 @@ PLIT은 듣기만 해도 이해되고, 필요할 때만 화면을 보면 됩니�
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=python,flask,html,css,js" />
+<img src="https://skillicons.dev/icons?i=python,flask,nextjs,typescript" />
 
 **Core Engine:** Coqui TTS (XTTS-v2)
 
